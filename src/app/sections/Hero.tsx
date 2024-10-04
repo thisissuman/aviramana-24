@@ -4,52 +4,34 @@ import Image from "next/image";
 import resi from "@/app/assets/resi.jpeg";
 import book from "@/app/assets/book.jpeg";
 import sign from "@/app/assets/signup.jpeg";
-
+import { content } from "../constant";
 const Hero = () => {
-  // State to track the hovered image
+  
   const [hoveredImage, setHoveredImage] = useState<
     "imageOne" | "imageTwo" | "imageThree" | null
   >(null);
 
-  // State to trigger the blur effect
+  
   const [blurText, setBlurText] = useState(false);
 
-  // Object storing content for each image
-  const content = {
-    imageOne: {
-      title: "Pathway to Productivity",
-      description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, possimus aut.",
-    },
-    imageTwo: {
-      title: "Unlock Your Potential",
-      description:
-        "Discover how resilience can help you thrive in challenging environments.",
-    },
-    imageThree: {
-      title: "Stay Strong & Focused",
-      description:
-        "Resilience coaching to help you navigate life's most difficult moments.",
-    },
-  };
 
-  // Fallback content when no image is hovered
+  
   const defaultTitle = "Pathway to Productivity";
   const defaultDescription =
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error modi fugit doloremque optio?";
 
-  // Dynamically get the content based on hovered image
+  
   const { title, description } = hoveredImage
     ? content[hoveredImage]
     : { title: defaultTitle, description: defaultDescription };
 
-  // Handle hover start
+  
   const handleHoverStart = (image: "imageOne" | "imageTwo" | "imageThree") => {
-    setBlurText(true); // Start blur effect
+    setBlurText(true); 
     setTimeout(() => {
       setHoveredImage(image);
-      setBlurText(false); // Remove blur effect after update
-    }, 200); // Time for the blur transition
+      setBlurText(false); 
+    }, 300); 
   };
 
   return (
@@ -57,7 +39,7 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="md:flex items-center">
           {/* Left Side - Text Content */}
-          <div className="md:w-[478px] mb-56">
+          <div className="md:w-[478px] mb-56 ml-10">
             <h1
               className={`text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text mt-6 transition-all duration-300 ${
                 blurText ? "blur-sm opacity-50" : "blur-none opacity-100"
@@ -74,13 +56,13 @@ const Hero = () => {
             </p>
             <div className="flex gap-1 items-center mt-[30px]">
               <button className="btn btn-primary">Book a consultation now</button>
-              <button className="btn btn-text">Learn more</button>
+              <button className="btn btn-text hidden md:block">Learn more</button>
             </div>
           </div>
 
           {/* Right Side - Stacked Images with Hover Effect */}
-          <div className="mt-20 md:mt-0 md:h-[648px] md:flex-1 relative ml-20">
-            {/* First Image (Bottom Layer) */}
+          <div className="-mt-28 md:mt-0 md:h-[648px] md:flex-1 relative ml-20">
+           
             <Image
               src={resi}
               alt="Resilience Image"
@@ -93,7 +75,7 @@ const Hero = () => {
               onMouseLeave={() => setHoveredImage(null)}
             />
 
-            {/* Second Image (Middle Layer) */}
+          
             <Image
               src={book}
               alt="Book Image"
@@ -106,7 +88,7 @@ const Hero = () => {
               onMouseLeave={() => setHoveredImage(null)}
             />
 
-            {/* Third Image (Top Layer) */}
+           
             <Image
               src={sign}
               alt="Sign Up Image"
