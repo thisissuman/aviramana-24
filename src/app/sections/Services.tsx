@@ -2,12 +2,11 @@
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { programmes } from "../constant";
-import { fadeIn, textVariant } from "@/app/utils/motion";
 import Image from "next/image";
 
 const ServiceCard = ({ index, title, description, image }) => {
   return (
-    <Tilt className="bg-gradient-to-b from-orange-300 to-[#f0f058]  p-5 rounded-lg sm:w-[300px] w-full text-center hover:shadow-lg transition-shadow duration-300 ease-in-out">
+    <Tilt className="bg-gradient-to-b from-orange-300 to-[#f0f058]  p-5 rounded-lg sm:w-[300px] w-80 text-center hover:shadow-lg transition-shadow duration-300 ease-in-out border border-black">
       {/* Icon with circle border */}
       <div className="flex justify-center items-center mb-4">
         <motion.div

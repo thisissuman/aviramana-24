@@ -4,6 +4,9 @@ import mentalhealth from "@/app/assets/mentalhealth.png";
 import productivity from "@/app/assets/productivity.png";
 import stress from "@/app/assets/stress.png";
 import ptsd from "@/app/assets/ptsd.png";
+import resi from "@/app/assets/resi.jpeg";
+import book from "@/app/assets/book.jpeg";
+import sign from "@/app/assets/signup.jpeg";
 
 const content = {
   imageOne: {
@@ -62,4 +65,28 @@ const programmes = [
   },
 ];
 
-export { content, programmes };
+const testimonials = [
+  {
+    name: "John Doe",
+    image: resi,
+    profession: "Professional Athlete",
+    description:
+      "AVIRAMAN24 helped me build mental toughness and improve my resilience, both on and off the field. Highly recommend!",
+  },
+  {
+    name: "Sarah Lee",
+    image: book,
+    profession: "Student",
+    description:
+      "Thanks to AVIRAMAN24, I was able to overcome my academic stress and develop a positive outlook toward my studies.",
+  },
+  {
+    name: "Michael Johnson",
+    image: sign,
+    profession: "PTSD Survivor",
+    description:
+      "The resilience coaching has been life-changing for me. It gave me the tools to rebuild my life and move forward with confidence.",
+  },
+];
+
+export { content, programmes, testimonials };
