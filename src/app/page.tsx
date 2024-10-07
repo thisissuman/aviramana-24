@@ -3,6 +3,7 @@ import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import Services from "./sections/Services";
 import TestimonialSection from "./sections/TestimonialSection";
+import FeesAndCharges from "./sections/FeesAndCharges";
 export default function Home() {
   return (
     <>
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Services/>
       <TestimonialSection/>
+      <FeesAndCharges />
     </>
   );
 }

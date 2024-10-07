@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { testimonials } from "../constant";
 
-
 // Single Testimonial Card Component
 const TestimonialCard = ({ testimonial }) => {
   return (
@@ -24,8 +23,12 @@ const TestimonialCard = ({ testimonial }) => {
           <span className="text-xl">❝</span>
         </div>
       </motion.div>
-      <p className="mt-8 text-center philosopher-regular ">{testimonial.description}</p>
-      <p className="mt-8 text-center font-bold philosopher-bold">{testimonial.name}</p>
+      <p className="mt-8 text-center philosopher-regular ">
+        {testimonial.description}
+      </p>
+      <p className="mt-8 text-center font-bold philosopher-bold">
+        {testimonial.name}
+      </p>
     </div>
   );
 };
@@ -41,27 +44,23 @@ const TestimonialSection = () => {
       <div className="flex justify-center mb-8">
         <div className="w-24 h-[3px] bg-orange-400"></div>
       </div>
-      <div className="relative overflow-hidden  md:pt-10">
-        {/* Testimonial Slider */}
-       {/*  <motion.div
-          className="flex gap-6"
-          initial={{ x: 0 }}
-          animate={{ x: ["0%", "-100%", "-200%", "0%"] }}
-          transition={{
-            duration: 15,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        ></motion.div> */}
-        <div className="flex flex-wrap md:flex-nowrap gap-6 py-10 pl-14">
+      <div className="relative overflow-hidden  md:pt-10 md:flex">
+        <motion.div className="flex flex-wrap md:flex-nowrap gap-6 py-10 pl-14"
+         animate={{ x: ["0%", "-100%"] }}  // Shift to -100% to create a circular flow
+         transition={{
+           repeat: Infinity,
+           ease: "linear",
+           duration: 10,
+         }}
+         style={{ display: "flex" }}>
           {testimonials.map((testimonial, index) => (
             <TestimonialCard testimonial={testimonial} />
           ))}
-        </div>
+        </motion.div>
 
         {/* Fade effect on the sides */}
-       {/*  <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#091b2e]"></div>
-        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-[#091b2e]"></div> */}
+        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#091b2e]"></div>
+        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-[#091b2e]"></div>
       </div>
     </div>
   );

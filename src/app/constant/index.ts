@@ -89,4 +89,28 @@ const testimonials = [
   },
 ];
 
-export { content, programmes, testimonials };
+ const feesAndCharges = [
+    {
+      title: "Basic",
+      price: "₹7,999",
+      description: "Best for individuals seeking foundational resilience coaching.",
+      features: ["1:1 Session", "Personalized Coaching", "Email Support"],
+      buttonLabel: "Get Started",
+    },
+    {
+      title: "Premium",
+      price: "₹14,999",
+      description: "Ideal for professionals and sports persons looking for personalized coaching.",
+      features: ["All Basic Features", "1:1 and Group Sessions", "Priority Email and Chat Support"],
+      buttonLabel: "Get Started",
+    },
+    {
+      title: "Enterprise",
+      price: "₹29,999",
+      description: "Best for large organizations or individuals pursuing long-term resilience goals.",
+      features: ["All Premium Features", "Extended 1:1 Sessions", "24/7 Support", "Quarterly Check-ins"],
+      buttonLabel: "Get Started",
+    },
+  ];
+    
+export { content, programmes, testimonials,feesAndCharges };
