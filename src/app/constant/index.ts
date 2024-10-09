@@ -113,4 +113,62 @@ const testimonials = [
     },
   ];
     
-export { content, programmes, testimonials,feesAndCharges };
+
+
+// constants/index.ts
+const mediaItems = [
+  {
+    id: 1,
+    type: "video",
+    title: "Building Resilience for Challenging Times",
+    url: "https://www.youtube.com/watch?v=dLu2F_EwAP8",
+  },
+  {
+    id: 2,
+    type: "video",
+    title: "How Resilience Coaching Transforms Lives",
+    url: "https://www.youtube.com/watch?v=_tjucUCjyqM",
+  },
+  {
+    id: 3,
+    type: "blog",
+    title: "Overcoming PTSD: A Guide to Resilience",
+    description: "An in-depth blog on PTSD and building resilience.",
+    link: "/overcoming-ptsd-blog",
+    thumbnail: stress, // Add path to your thumbnail image
+  },
+  {
+    id: 4,
+    type: "video",
+    title: "Mental Strength and Its Impact on Success",
+    url: "https://www.youtube.com/watch?v=TUJIMDuPkT8",
+  },
+  {
+    id: 5,
+    type: "video",
+    title: "Resilience Strategies for Students",
+    url: "https://www.youtube.com/watch?v=hcfLLH8k9q8",
+  },
+  {
+    id: 6,
+    type: "blog",
+    title: "The Power of Resilience in Sports",
+    description: "Exploring resilience strategies for athletes.",
+    link: "/resilience-in-sports-blog",
+    thumbnail: ptsd, // Add path to your thumbnail image
+  },
+  {
+    id: 7,
+    type: "blog",
+    title: "Mindfulness Techniques for Stress Management",
+    description: "Techniques for building resilience through mindfulness.",
+    link: "/mindfulness-techniques-blog",
+    thumbnail: student, // Add path to your thumbnail image
+  },
+];
+
+
+
+  
+
+export { content, programmes, testimonials,feesAndCharges,mediaItems };

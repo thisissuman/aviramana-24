@@ -50,7 +50,7 @@ const TestimonialSection = () => {
          transition={{
            repeat: Infinity,
            ease: "linear",
-           duration: 10,
+           duration: 35,
          }}
          style={{ display: "flex" }}>
           {testimonials.map((testimonial, index) => (
@@ -59,8 +59,8 @@ const TestimonialSection = () => {
         </motion.div>
 
         {/* Fade effect on the sides */}
-        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#091b2e]"></div>
-        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-[#091b2e]"></div>
+        {/* <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#091b2e]"></div>
+        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-[#091b2e]"></div> */}
       </div>
     </div>
   );

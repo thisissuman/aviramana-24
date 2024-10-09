@@ -4,6 +4,8 @@ import Hero from "./sections/Hero";
 import Services from "./sections/Services";
 import TestimonialSection from "./sections/TestimonialSection";
 import FeesAndCharges from "./sections/FeesAndCharges";
+import InMediaSection from "./sections/InMediaSection ";
+import Footer from "./sections/Footer";
 export default function Home() {
   return (
     <>
@@ -11,7 +13,9 @@ export default function Home() {
       <Hero />
       <Services/>
       <TestimonialSection/>
+      <InMediaSection/>
       <FeesAndCharges />
+      <Footer/>
     </>
   );
 }
