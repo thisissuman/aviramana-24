@@ -2,16 +2,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Slider from "react-slick";
 import { testimonials } from "../constant";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Single Testimonial Card Component
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <div className="relative p-7 md:m-2 bg-[#34220b] text-white rounded-lg shadow-md w-4/5 ">
-      <motion.div
-        className="absolute -top-8 left-1/2 transform -translate-x-1/2"
-        /* whileHover={{ scale: 1.1 }} */
-      >
+    <div className="relative p-7 md:m-2 bg-[#34220b] text-white rounded-lg shadow-md w-4/5 md:mt-10 ">
+      <motion.div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
         <Image
           src={testimonial.image}
           alt={testimonial.name}
@@ -35,32 +35,41 @@ const TestimonialCard = ({ testimonial }) => {
 
 // Main Testimonial Section Component
 const TestimonialSection = () => {
+  const sliderSettings = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    pauseOnHover: true,
+    arrows: false,
+    speed: 7000, // Adjust this for smooth continuous movement
+    cssEase: "linear", // For continuous, smooth motion
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="w-full  bg-gradient-to-t from-[#e7b877] py-12 items-center ">
-      <h2 className="text-center  mb-2 text-3xl font-bold text-gray-900 philosopher-bold">
+    <div className="w-full bg-[linear-gradient(to_bottom,#EAEEFE,#e3cc70)] overflow-x-clip py-12 items-center ">
+      <h2 className="text-center mb-2 text-3xl font-bold text-gray-900 philosopher-bold">
         What Our Customers Say
       </h2>
       {/* Orange Line */}
       <div className="flex justify-center mb-8">
         <div className="w-24 h-[3px] bg-orange-400"></div>
       </div>
-      <div className="relative overflow-hidden  md:pt-10 md:flex">
-        <motion.div className="flex flex-wrap md:flex-nowrap gap-6 py-10 pl-14"
-         animate={{ x: ["0%", "-100%"] }}  // Shift to -100% to create a circular flow
-         transition={{
-           repeat: Infinity,
-           ease: "linear",
-           duration: 35,
-         }}
-         style={{ display: "flex" }}>
+      <div className="relative overflow-hidden md:pt-10 md:flex">
+        <Slider {...sliderSettings} className="w-full">
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard testimonial={testimonial} />
+            <TestimonialCard key={index} testimonial={testimonial} />
           ))}
-        </motion.div>
-
-        {/* Fade effect on the sides */}
-        {/* <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#091b2e]"></div>
-        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-[#091b2e]"></div> */}
+        </Slider>
       </div>
     </div>
   );

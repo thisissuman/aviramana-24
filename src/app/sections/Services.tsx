@@ -6,11 +6,11 @@ import Image from "next/image";
 
 const ServiceCard = ({ index, title, description, image }) => {
   return (
-    <Tilt className="bg-gradient-to-b from-orange-300 to-[#f0f058]  p-5 rounded-lg sm:w-[300px] w-80 text-center hover:shadow-lg transition-shadow duration-300 ease-in-out border border-black">
+    <Tilt className="bg-gradient-to-b from-yellow-300 to-amber-100 p-5 rounded-lg sm:w-[300px] w-80 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out border border-black">
       {/* Icon with circle border */}
       <div className="flex justify-center items-center mb-4">
         <motion.div
-          className="w-24 h-24 rounded-full border-4 border-black flex justify-center items-center"
+          className="w-24 h-24 rounded-full border-4 border-black flex justify-center items-center bg-orange-100 shadow-lg"
           whileHover={{
             scale: [1, 1.2, 1.2, 1],
             rotate: [0, 0, 360, 360],
@@ -33,12 +33,12 @@ const ServiceCard = ({ index, title, description, image }) => {
         </motion.div>
       </div>
       {/* Title and description */}
-      <div className="text-gray-800">
+      <div className="text-black">
         <h3 className="font-bold text-[20px] mb-2 philosopher-bold">{title}</h3>
-        <p className="text-gray-600 text-[14px]">{description}</p>
+        <p className="text-gray-700 text-[14px]">{description}</p>
         <a
           href="#"
-          className="text-orange-600 mt-4 inline-block hover:underline"
+          className="text-orange-600 mt-4 inline-block hover:underline hover:text-black transition-colors duration-300"
         >
           READ MORE
         </a>
@@ -47,9 +47,11 @@ const ServiceCard = ({ index, title, description, image }) => {
   );
 };
 
+
+
 const Services = () => {
   return (
-    <section className="py-10 text-center">
+    <section className="py-10 text-center bg-[linear-gradient(to_bottom,#e3cc70,#EAEEFE)] overflow-x-clip">
       <h2 className="text-3xl font-bold text-gray-900 philosopher-bold">Most Popular Events</h2>
       <div className="w-20 h-1 bg-orange-400 mx-auto mt-2 mb-4 philosopher-regular"></div>
       <p className="text-gray-600 max-w-2xl mx-auto">

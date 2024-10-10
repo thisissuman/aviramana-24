@@ -5,7 +5,7 @@ import { feesAndCharges } from "../constant";
 
 const FeesAndCharges = () => {
   return (
-    <div className="bg-white py-12">
+    <div className=" py-12 bg-[linear-gradient(to_bottom,#EAEEFE,#e3cc70)] overflow-x-clip">
       <h2 className="text-center text-3xl font-bold mb-6">Our Pricing Plans</h2>
       <p className="text-center mb-12">
         Choose from our affordable packages for resilience coaching.

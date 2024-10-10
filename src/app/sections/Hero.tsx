@@ -35,7 +35,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,#eac222,#EAEEFE_100%)] overflow-x-clip">
+    <section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[linear-gradient(to_bottom,#EAEEFE,#e3cc70)] overflow-x-clip
+">
       <div className="container mx-auto">
         <div className="md:flex items-center">
           {/* Left Side - Text Content */}

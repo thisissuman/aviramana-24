@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import Slider from "react-slick";
@@ -7,6 +7,42 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { mediaItems } from "@/app/constant";
 import Image from "next/image";
+
+// Custom Arrow components
+const CustomPrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        left: "10px", // Adjust this to move it inside
+        zIndex: 1,
+        color: "orange", // Customize color if needed
+      }}
+      onClick={onClick}
+    />
+  );
+};
+
+const CustomNextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        right: "10px", // Adjust this to move it inside
+        zIndex: 1,
+        color: "orange", // Customize color if needed
+      }}
+      onClick={onClick}
+    />
+  );
+};
+
 // Slider settings
 const sliderSettings = {
   infinite: true,
@@ -22,10 +58,17 @@ const sliderSettings = {
       },
     },
   ],
+  nextArrow: <CustomNextArrow />,
+  prevArrow: <CustomPrevArrow />,
 };
 
 const InMediaSection = () => {
   const [playingVideo, setPlayingVideo] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Function to extract YouTube thumbnail from video URL
   const getYouTubeThumbnail = (url) => {
@@ -34,7 +77,7 @@ const InMediaSection = () => {
   };
 
   return (
-    <div className="bg-white py-12">
+    <div className=" py-12 relative bg-[linear-gradient(to_bottom,#e3cc70,#EAEEFE)] overflow-x-clip ">
       <h2 className="text-center text-3xl font-bold mb-2">In Media</h2>
       <div className="flex justify-center mb-8">
         <div className="w-24 h-[3px] bg-orange-400"></div>
@@ -56,15 +99,23 @@ const InMediaSection = () => {
               style={{ maxWidth: "350px", margin: "auto" }}
             >
               <div className="relative bg-white shadow-lg rounded-lg overflow-hidden">
-                <ReactPlayer
-                  url={item.url}
-                  playing={playingVideo === item.id}
-                  width="100%"
-                  height="200px"
-                  controls
-                  light={getYouTubeThumbnail(item.url)}
-                  onClick={() => setPlayingVideo(item.id)}
-                />
+                {isMounted ? (
+                  <ReactPlayer
+                    url={item.url}
+                    playing={playingVideo === item.id}
+                    width="100%"
+                    height="200px"
+                    controls
+                    light={getYouTubeThumbnail(item.url)}
+                    onClick={() => setPlayingVideo(item.id)}
+                  />
+                ) : (
+                  <img
+                    src={getYouTubeThumbnail(item.url)}
+                    alt={item.title}
+                    className="w-full h-48 object-cover"
+                  />
+                )}
                 <div className="p-2">
                   <h3 className="text-lg font-bold text-gray-900">
                     {item.title}
