@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FiMapPin, FiMail, FiPhone } from "react-icons/fi";
-import logo from "@/app/assets/logo.png";
 import aviramam24 from "@/app/assets/aviramam24.svg";
 
 const Footer = () => {

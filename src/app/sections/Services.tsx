@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { programmes } from "../constant";
 import Image from "next/image";
 
-const ServiceCard = ({ index, title, description, image }) => {
+const ServiceCard = ({  title, description, image }) => {
   return (
     <Tilt className="bg-gradient-to-b from-yellow-300 to-amber-100 p-5 rounded-lg sm:w-[300px] w-80 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out border border-black">
       {/* Icon with circle border */}
