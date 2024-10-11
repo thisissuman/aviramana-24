@@ -11,7 +11,7 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleScroll = (sectionId) => {
+  const handleScroll = (sectionId: any) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setActiveSection(sectionId);
     setMenuOpen(false); // Close menu on item click
@@ -84,23 +84,27 @@ const Header = () => {
 
             {/* Navbar Links for Desktop */}
             <nav className="hidden md:flex gap-6 items-center text-black/60 philosopher-bold md:ml-auto">
-              {["About Us", "Programme", "In Media", "Testimonial", "Fees/Charges"].map(
-                (name, index) => {
-                  const sectionId = name.toLowerCase().replace(/ /g, "");
-                  return (
-                    <motion.a
-                      key={index}
-                      className={`cursor-pointer ${
-                        activeSection === sectionId ? "text-black" : ""
-                      }`}
-                      onClick={() => handleScroll(sectionId)}
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      {name}
-                    </motion.a>
-                  );
-                }
-              )}
+              {[
+                "About Us",
+                "Programme",
+                "In Media",
+                "Testimonial",
+                "Fees/Charges",
+              ].map((name, index) => {
+                const sectionId = name.toLowerCase().replace(/ /g, "");
+                return (
+                  <motion.a
+                    key={index}
+                    className={`cursor-pointer ${
+                      activeSection === sectionId ? "text-black" : ""
+                    }`}
+                    onClick={() => handleScroll(sectionId)}
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {name}
+                  </motion.a>
+                );
+              })}
               <button className="bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tighter">
                 Sign In
               </button>
@@ -126,23 +130,27 @@ const Header = () => {
           </div>
 
           <nav className="flex flex-col gap-6 text-white philosopher-bold">
-            {["About Us", "Programme", "In Media", "Testimonial", "Fees/Charges"].map(
-              (name, index) => {
-                const sectionId = name.toLowerCase().replace(/ /g, "");
-                return (
-                  <motion.a
-                    key={index}
-                    className={`cursor-pointer ${
-                      activeSection === sectionId ? "text-orange-500" : ""
-                    }`}
-                    onClick={() => handleScroll(sectionId)}
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    {name}
-                  </motion.a>
-                );
-              }
-            )}
+            {[
+              "About Us",
+              "Programme",
+              "In Media",
+              "Testimonial",
+              "Fees/Charges",
+            ].map((name, index) => {
+              const sectionId = name.toLowerCase().replace(/ /g, "");
+              return (
+                <motion.a
+                  key={index}
+                  className={`cursor-pointer ${
+                    activeSection === sectionId ? "text-orange-500" : ""
+                  }`}
+                  onClick={() => handleScroll(sectionId)}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  {name}
+                </motion.a>
+              );
+            })}
             <button
               className="bg-orange-500 text-black px-4 py-2 rounded-lg font-medium tracking-tighter mt-4"
               onClick={() => setMenuOpen(false)}

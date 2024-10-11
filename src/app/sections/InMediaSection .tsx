@@ -7,9 +7,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { mediaItems } from "@/app/constant";
 import Image from "next/image";
+import defaulthumb from "@/app/assets/blog1.jpeg"
 
 // Custom Arrow components
-const CustomPrevArrow = (props) => {
+const CustomPrevArrow = (props: any) => {
   const { className, style, onClick } = props;
   return (
     <div
@@ -26,7 +27,7 @@ const CustomPrevArrow = (props) => {
   );
 };
 
-const CustomNextArrow = (props) => {
+const CustomNextArrow = (props: any) => {
   const { className, style, onClick } = props;
   return (
     <div
@@ -63,7 +64,7 @@ const sliderSettings = {
 };
 
 const InMediaSection = () => {
-  const [playingVideo, setPlayingVideo] = useState(null);
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -71,7 +72,7 @@ const InMediaSection = () => {
   }, []);
 
   // Function to extract YouTube thumbnail from video URL
-  const getYouTubeThumbnail = (url) => {
+  const getYouTubeThumbnail = (url: any) => {
     const videoId = url.split("v=")[1];
     return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
   };
@@ -147,7 +148,7 @@ const InMediaSection = () => {
                 >
                   <a href={item.link} target="_blank" rel="noopener noreferrer">
                     <Image
-                      src={item.thumbnail}
+                      src={item.thumbnail || defaulthumb}
                       alt={item.title}
                       className="w-full h-48 object-cover"
                       width={350}
@@ -157,9 +158,7 @@ const InMediaSection = () => {
                       <h3 className="text-lg font-bold text-black">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-black">
-                        {item.description}
-                      </p>
+                      <p className="text-sm text-black">{item.description}</p>
                     </div>
                   </a>
                 </div>
