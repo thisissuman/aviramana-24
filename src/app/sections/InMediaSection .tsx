@@ -111,7 +111,7 @@ const InMediaSection = () => {
                     onClick={() => setPlayingVideo(item.id)}
                   />
                 ) : (
-                  <img
+                  <Image
                     src={getYouTubeThumbnail(item.url)}
                     alt={item.title}
                     className="w-full h-48 object-cover"
