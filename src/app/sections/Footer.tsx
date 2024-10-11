@@ -13,11 +13,11 @@ const Footer = () => {
         {/* Logo and Description */}
         <div>
           <div className="flex items-center mb-4">
-            <Image src={aviramam24} alt="AVIRAMAN24" width={50} height={50} />
-            <span className="ml-2 text-2xl font-bold text-orange-400">AVIRAMAN24</span>
+            <Image src={aviramam24} alt="AVIRAMAM24" width={50} height={50} />
+            <span className="ml-2 text-2xl font-bold text-orange-400">AVIRAMAM24</span>
           </div>
           <p className="text-gray-400 mb-4">
-            Focusing on resilience coaching and mental health, AVIRAMAN24 is here to guide you in your journey of personal growth.
+            Focusing on resilience coaching and mental health, AVIRAMAM24 is here to guide you in your journey of personal growth.
           </p>
           <p className="text-gray-400">Follow Us</p>
           <div className="flex space-x-4 mt-2">
@@ -53,7 +53,7 @@ const Footer = () => {
           <ul className="text-gray-400 space-y-3">
             <li className="flex items-start">
               <FiMapPin className="text-orange-400 mr-2" />
-              <span>Block A A-804, Century Central, Kanakapura Rd, Bangalore, 560078</span>
+              <span>Block A A-804,Marthallai, Bangalore, 560037</span>
             </li>
             <li className="flex items-start">
               <FiMail className="text-orange-400 mr-2" />
@@ -61,14 +61,14 @@ const Footer = () => {
             </li>
             <li className="flex items-start">
               <FiPhone className="text-orange-400 mr-2" />
-              <span>+91 9353066802<br />+91 8079687199</span>
+              <span>+91 9876543210<br />+91 9876543210</span>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500 text-sm">
-        <p>Copyright © 2024 AVIRAMAN24. All Rights Reserved.</p>
+        <p>Copyright © 2024 AVIRAMAM24. All Rights Reserved.</p>
       </div>
     </footer>
   );

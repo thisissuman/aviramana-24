@@ -51,7 +51,7 @@ const ServiceCard = ({ index, title, description, image }) => {
 
 const Services = () => {
   return (
-    <section className="py-10 text-center bg-[linear-gradient(to_bottom,#e3cc70,#EAEEFE)] overflow-x-clip">
+    <section className="text-center bg-[linear-gradient(to_bottom,#e3cc70,#EAEEFE)] overflow-x-clip">
       <h2 className="text-3xl font-bold text-gray-900 philosopher-bold">Most Popular Events</h2>
       <div className="w-20 h-1 bg-orange-400 mx-auto mt-2 mb-4 philosopher-regular"></div>
       <p className="text-gray-600 max-w-2xl mx-auto">

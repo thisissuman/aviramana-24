@@ -7,6 +7,9 @@ const FeesAndCharges = () => {
   return (
     <div className=" py-12 bg-[linear-gradient(to_bottom,#EAEEFE,#e3cc70)] overflow-x-clip">
       <h2 className="text-center text-3xl font-bold mb-6">Our Pricing Plans</h2>
+      <div className="flex justify-center mb-8">
+        <div className="w-24 h-[3px] bg-orange-400"></div>
+      </div>
       <p className="text-center mb-12">
         Choose from our affordable packages for resilience coaching.
       </p>

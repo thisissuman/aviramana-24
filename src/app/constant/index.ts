@@ -7,6 +7,9 @@ import ptsd from "@/app/assets/ptsd.png";
 import resi from "@/app/assets/resi.jpeg";
 import book from "@/app/assets/book.jpeg";
 import sign from "@/app/assets/signup.jpeg";
+import blog1 from "@/app/assets/blog1.jpeg"
+import blog2 from "@/app/assets/blog2.jpeg"
+import blog3 from "@/app/assets/blog3.jpeg"
 
 const content = {
   imageOne: {
@@ -71,14 +74,14 @@ const testimonials = [
     image: resi,
     profession: "Professional Athlete",
     description:
-      "AVIRAMAN24 helped me build mental toughness and improve my resilience, both on and off the field. Highly recommend!",
+      "AVIRAMAM24 helped me build mental toughness and improve my resilience, both on and off the field. Highly recommend!",
   },
   {
     name: "Sarah Lee",
     image: book,
     profession: "Student",
     description:
-      "Thanks to AVIRAMAN24, I was able to overcome my academic stress and develop a positive outlook toward my studies.",
+      "Thanks to AVIRAMAM24, I was able to overcome my academic stress and develop a positive outlook toward my studies.",
   },
   {
     name: "Michael Johnson",
@@ -135,7 +138,7 @@ const mediaItems = [
     title: "Overcoming PTSD: A Guide to Resilience",
     description: "An in-depth blog on PTSD and building resilience.",
     link: "/overcoming-ptsd-blog",
-    thumbnail: stress, // Add path to your thumbnail image
+    thumbnail: blog1, // Add path to your thumbnail image
   },
   {
     id: 4,
@@ -152,10 +155,10 @@ const mediaItems = [
   {
     id: 6,
     type: "blog",
-    title: "The Power of Resilience in Sports",
-    description: "Exploring resilience strategies for athletes.",
+    title: "The Power of Resilience in Sports activities",
+    description: "Exploring resilience strategies for athletes/sports persons",
     link: "/resilience-in-sports-blog",
-    thumbnail: ptsd, // Add path to your thumbnail image
+    thumbnail: blog2, // Add path to your thumbnail image
   },
   {
     id: 7,
@@ -163,7 +166,7 @@ const mediaItems = [
     title: "Mindfulness Techniques for Stress Management",
     description: "Techniques for building resilience through mindfulness.",
     link: "/mindfulness-techniques-blog",
-    thumbnail: student, // Add path to your thumbnail image
+    thumbnail: blog3, // Add path to your thumbnail image
   },
 ];
 

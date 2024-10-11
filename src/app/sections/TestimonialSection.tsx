@@ -56,7 +56,7 @@ const TestimonialSection = () => {
   };
 
   return (
-    <div className="w-full bg-[linear-gradient(to_bottom,#EAEEFE,#e3cc70)] overflow-x-clip py-12 items-center ">
+    <div className="w-full bg-[linear-gradient(to_bottom,#e3cc70,#EAEEFE)] overflow-x-clip py-12 items-center ">
       <h2 className="text-center mb-2 text-3xl font-bold text-gray-900 philosopher-bold">
         What Our Customers Say
       </h2>

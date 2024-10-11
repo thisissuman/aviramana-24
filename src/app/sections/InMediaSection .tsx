@@ -17,9 +17,9 @@ const CustomPrevArrow = (props) => {
       style={{
         ...style,
         display: "block",
-        left: "10px", // Adjust this to move it inside
+        left: "10px",
         zIndex: 1,
-        color: "orange", // Customize color if needed
+        color: "orange",
       }}
       onClick={onClick}
     />
@@ -34,9 +34,9 @@ const CustomNextArrow = (props) => {
       style={{
         ...style,
         display: "block",
-        right: "10px", // Adjust this to move it inside
+        right: "10px",
         zIndex: 1,
-        color: "orange", // Customize color if needed
+        color: "orange",
       }}
       onClick={onClick}
     />
@@ -77,7 +77,7 @@ const InMediaSection = () => {
   };
 
   return (
-    <div className=" py-12 relative bg-[linear-gradient(to_bottom,#e3cc70,#EAEEFE)] overflow-x-clip ">
+    <div className="py-12 relative bg-[linear-gradient(to_bottom,#EAEEFE,#e3cc70)] overflow-x-clip">
       <h2 className="text-center text-3xl font-bold mb-2">In Media</h2>
       <div className="flex justify-center mb-8">
         <div className="w-24 h-[3px] bg-orange-400"></div>
@@ -136,28 +136,28 @@ const InMediaSection = () => {
               <motion.div
                 key={item.id}
                 whileHover={{ scale: 1.05 }}
-                className="p-4"
-                style={{ maxWidth: "350px", margin: "auto" }}
+                className="w-[350px] p-4"
+                style={{ margin: "auto" }}
               >
                 <div
-                  className="relative bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer transform transition duration-300 hover:shadow-2xl"
+                  className="relative bg-gradient-to-b from-[#f4f3f2] to-[#faf8f1] shadow-lg rounded-lg overflow-hidden cursor-pointer transition duration-300 hover:shadow-2xl"
                   style={{
-                    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.6)", // Stronger black shadow
+                    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.6)",
                   }}
                 >
                   <a href={item.link} target="_blank" rel="noopener noreferrer">
                     <Image
                       src={item.thumbnail}
                       alt={item.title}
-                      className="w-30 h-30"
-                      width={64}
-                      height={64}
+                      className="w-full h-48 object-cover"
+                      width={350}
+                      height={200}
                     />
                     <div className="p-4">
-                      <h3 className="text-lg font-bold text-gray-900">
+                      <h3 className="text-lg font-bold text-black">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-700">
+                      <p className="text-sm text-black">
                         {item.description}
                       </p>
                     </div>
