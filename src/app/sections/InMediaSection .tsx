@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, CSSProperties } from "react";
 import { motion } from "framer-motion";
 import ReactPlayer from "react-player";
 import Slider from "react-slick";
@@ -7,13 +7,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { mediaItems } from "@/app/constant";
 import Image from "next/image";
-import defaulthumb from "@/app/assets/blog1.jpeg"
+import defaulthumb from "@/app/assets/blog1.jpeg";
+
+interface CustomArrowProps {
+  className?: string;
+  style?: CSSProperties;
+  onClick?: () => void;
+}
 
 // Custom Arrow components
-const CustomPrevArrow = (props: any) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
+const CustomPrevArrow: React.FC<CustomArrowProps> = ({ className, style, onClick }) => (
+  <div
       className={className}
       style={{
         ...style,
@@ -25,11 +29,8 @@ const CustomPrevArrow = (props: any) => {
       onClick={onClick}
     />
   );
-};
 
-const CustomNextArrow = (props: any) => {
-  const { className, style, onClick } = props;
-  return (
+  const CustomNextArrow: React.FC<CustomArrowProps> = ({ className, style, onClick }) => (
     <div
       className={className}
       style={{
@@ -42,7 +43,6 @@ const CustomNextArrow = (props: any) => {
       onClick={onClick}
     />
   );
-};
 
 // Slider settings
 const sliderSettings = {
@@ -72,8 +72,8 @@ const InMediaSection = () => {
   }, []);
 
   // Function to extract YouTube thumbnail from video URL
-  const getYouTubeThumbnail = (url: any) => {
-    const videoId = url.split("v=")[1];
+  const getYouTubeThumbnail = (url: string | undefined) => {
+    const videoId = url?.split("v=")[1];
     return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
   };
 
