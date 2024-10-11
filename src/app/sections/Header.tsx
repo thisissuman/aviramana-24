@@ -11,7 +11,7 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleScroll = (sectionId: any) => {
+  const handleScroll = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setActiveSection(sectionId);
     setMenuOpen(false); // Close menu on item click
