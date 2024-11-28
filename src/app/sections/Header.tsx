@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <>
       {/* Overlay when menu is open */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ const Header = () => {
             onClick={() => setMenuOpen(false)}
           />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       <header className="sticky top-0 backdrop-blur-sm z-20 ">
         {/* Top bar */}
@@ -66,7 +66,7 @@ const Header = () => {
         </div>
 
         {/* Main Header */}
-        <div className="py-5">
+        <div>
           <div className="container md:mx-auto">
             <div className="flex items-center justify-between">
               {/* Logo Section */}
@@ -135,12 +135,14 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween" }}
-              className="fixed top-0 right-0 w-60%    bg-gray-800 text-white shadow-lg flex justify-between"
+              className="fixed top-0 right-0 w-4/3  bg-gray-800 text-white shadow-lg  rounded-md"
             >
-              <IoMdClose
-                className="h-10 w-10 text-white  bg-red-600"
-                onClick={() => setMenuOpen(!menuOpen)}
-              />
+              <div className="flex justify-end">
+                <IoMdClose
+                  className="h-10 w-10 text-white "
+                  onClick={() => setMenuOpen(!menuOpen)}
+                />
+              </div>
               {/* Close button is now handled in the main header */}
               <nav className="flex flex-col gap-6 px-6 mt-10 pb-10 bg-gray-800 rounded-md">
                 {[
