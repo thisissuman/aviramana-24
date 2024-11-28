@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <>
       {/* Overlay when menu is open */}
-      {/* <AnimatePresence>
+      <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -52,7 +52,7 @@ const Header = () => {
             onClick={() => setMenuOpen(false)}
           />
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
 
       <header className="sticky top-0 backdrop-blur-sm z-20 ">
         {/* Top bar */}
@@ -92,7 +92,7 @@ const Header = () => {
                   className="focus:outline-none"
                   aria-label={menuOpen ? "Close Menu" : "Open Menu"}
                 >
-                  {!menuOpen && <IoMdMenu className="h-10 w-10 text-black" />}
+                  {!menuOpen && <IoMdMenu className="h-10 w-10 text-black mr-5" />}
                 </button>
               </div>
 
