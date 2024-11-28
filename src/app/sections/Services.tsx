@@ -59,12 +59,12 @@ const Services = () => {
     <section className="text-center bg-[linear-gradient(to_bottom,#e3cc70,#EAEEFE)] overflow-x-clip">
       <h2 className="text-3xl font-bold text-gray-900 philosopher-bold">Most Popular Events</h2>
       <div className="w-20 h-1 bg-orange-400 mx-auto mt-2 mb-4 philosopher-regular"></div>
-      <p className="text-gray-600 max-w-2xl mx-auto">
+      <p className=" max-w-2xl mx-auto">
         Check out the most in-demand events for your easy reference to book our
         services today!
       </p>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-8">
+      <div className="mt-10 flex flex-wrap justify-center gap-8 w-3/4 mx-auto md:w-full">
         {programmes.map((programme, index) => (
           <ServiceCard key={programme.title} {...programme} index={index} />
         ))}

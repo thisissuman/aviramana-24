@@ -13,7 +13,7 @@ const FeesAndCharges = () => {
       <p className="text-center mb-12">
         Choose from our affordable packages for resilience coaching.
       </p>
-      <div className="flex justify-center gap-8 flex-wrap md:flex-nowrap">
+      <div className="flex justify-center gap-8 flex-wrap md:flex-nowrap  w-3/4 mx-auto md:w-full">
         {feesAndCharges.map((plan, index) => (
           <motion.div
             key={index}
