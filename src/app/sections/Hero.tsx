@@ -61,8 +61,8 @@ const Hero = () => {
               <Image
                 src={resi}
                 alt="Resilience Image"
-                width={180}
-                height={180}
+                width={200}
+                height={200}
                 className={`w-full h-auto rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out ${
                   hoveredImage === "imageOne" ? "z-20 scale-110" : "z-10"
                 }`}
@@ -73,8 +73,8 @@ const Hero = () => {
               <Image
                 src={book}
                 alt="Book Image"
-                width={180}
-                height={180}
+                width={200}
+                height={200}
                 className={`w-full h-auto rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out ${
                   hoveredImage === "imageTwo" ? "z-20 scale-110" : "z-10"
                 }`}
@@ -85,8 +85,8 @@ const Hero = () => {
               <Image
                 src={sign}
                 alt="Sign Up Image"
-                width={180}
-                height={180}
+                width={200}
+                height={200}
                 className={`w-full h-auto rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out ${
                   hoveredImage === "imageThree" ? "z-20 scale-110" : "z-10"
                 }`}
