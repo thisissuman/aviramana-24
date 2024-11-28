@@ -139,7 +139,7 @@ const Header = () => {
             >
               <div className="flex justify-end">
                 <IoMdClose
-                  className="h-10 w-10 text-white "
+                  className="h-10 w-10 text-white mr-5 mt-5"
                   onClick={() => setMenuOpen(!menuOpen)}
                 />
               </div>
