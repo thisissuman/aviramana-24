@@ -68,6 +68,8 @@ const Header = () => {
             </div>
 
             {/* Menu Icon for Mobile */}
+            
+
             <div className="md:hidden">
               {menuOpen ? (
                 <IoMdClose
@@ -129,7 +131,7 @@ const Header = () => {
             />
           </div>
 
-          <nav className="flex flex-col gap-6 text-white philosopher-bold">
+          <nav className="flex flex-col gap-6 text-white philosopher-bold bg-slate-500">
             {[
               "About Us",
               "Programme",

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { programmes } from "../constant";
 import Image, { StaticImageData } from "next/image";
 
-
 interface ServiceCardProps {
   title: string;
   description: string;
@@ -12,20 +11,20 @@ interface ServiceCardProps {
   index: number;
 }
 
-const  ServiceCard: React.FC<ServiceCardProps> = ({  title, description, image }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image }) => {
   return (
-    <Tilt className="bg-gradient-to-b from-yellow-300 to-amber-100 p-5 rounded-lg sm:w-[300px] w-80 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out border border-black">
+    <Tilt className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 rounded-xl sm:w-[300px] w-80 text-center hover:shadow-2xl transition-shadow duration-300 ease-in-out">
       {/* Icon with circle border */}
       <div className="flex justify-center items-center mb-4">
         <motion.div
-          className="w-24 h-24 rounded-full border-4 border-black flex justify-center items-center bg-orange-100 shadow-lg"
+          className="w-20 h-20 rounded-full border-2 border-white flex justify-center items-center bg-white bg-opacity-20 shadow-lg"
           whileHover={{
-            scale: [1, 1.2, 1.2, 1],
-            rotate: [0, 0, 360, 360],
+            scale: [1, 1.1, 1.1, 1],
+            rotate: [0, 10, -10, 0],
             borderRadius: ["50%", "50%", "50%", "50%"],
           }}
           transition={{
-            duration: 1,
+            duration: 0.6,
             ease: "easeInOut",
             repeat: 0,
           }}
@@ -34,19 +33,19 @@ const  ServiceCard: React.FC<ServiceCardProps> = ({  title, description, image }
           <Image
             src={image}
             alt={title}
-            width={56} // width of the icon (14 * 4)
-            height={56} // height of the icon (14 * 4)
+            width={56}
+            height={56}
             className="object-contain"
           />
         </motion.div>
       </div>
       {/* Title and description */}
-      <div className="text-black">
-        <h3 className="font-bold text-[20px] mb-2 philosopher-bold">{title}</h3>
-        <p className="text-gray-700 text-[14px]">{description}</p>
+      <div className="text-white">
+        <h3 className="font-semibold text-[22px] mb-2">{title}</h3>
+        <p className="text-gray-200 text-[14px]">{description}</p>
         <a
           href="#"
-          className="text-orange-600 mt-4 inline-block hover:underline hover:text-black transition-colors duration-300"
+          className="text-white mt-4 inline-block border-b-2 border-transparent hover:border-white transition-colors duration-300"
         >
           READ MORE
         </a>
@@ -54,8 +53,6 @@ const  ServiceCard: React.FC<ServiceCardProps> = ({  title, description, image }
     </Tilt>
   );
 };
-
-
 
 const Services = () => {
   return (
@@ -67,7 +64,7 @@ const Services = () => {
         services today!
       </p>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-6">
+      <div className="mt-10 flex flex-wrap justify-center gap-8">
         {programmes.map((programme, index) => (
           <ServiceCard key={programme.title} {...programme} index={index} />
         ))}

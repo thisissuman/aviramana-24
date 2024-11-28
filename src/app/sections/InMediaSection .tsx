@@ -115,6 +115,8 @@ const InMediaSection = () => {
                     src={getYouTubeThumbnail(item.url)}
                     alt={item.title}
                     className="w-full h-48 object-cover"
+                    width={350}
+                    height={200}
                   />
                 )}
                 <div className="p-2">
