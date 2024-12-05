@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import { IoIosCall } from "react-icons/io";
-import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import logo from "@/app/assets/logo.png";
 import aviramam24 from "@/app/assets/aviramam24.svg";
 
@@ -55,7 +54,7 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      <header className="sticky top-0 backdrop-blur-sm z-20">
+      <header className="sticky top-0 backdrop-blur-sm z-20 ">
         {/* Top bar */}
         <div className="flex justify-center items-center py-3 bg-black text-white text-sm gap-3">
           <p className="text-white/60 hidden md:block philosopher-bold">
@@ -93,9 +92,7 @@ const Header = () => {
                   className="focus:outline-none"
                   aria-label={menuOpen ? "Close Menu" : "Open Menu"}
                 >
-                  {!menuOpen && (
-                    <IoMdMenu className="h-10 w-10 text-black mr-5" />
-                  )}
+                  {!menuOpen && <IoMdMenu className="h-10 w-10 text-black mr-5" />}
                 </button>
               </div>
 
@@ -122,16 +119,9 @@ const Header = () => {
                     </motion.a>
                   );
                 })}
-
-                {/* Conditional Rendering of Sign In or User Button */}
-                <SignedOut>
-                  <button className="bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tighter">
-                    Sign In
-                  </button>
-                </SignedOut>
-                <SignedIn>
-                  <UserButton afterSignOutUrl="/" />
-                </SignedIn>
+                <button className="bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tighter">
+                  Sign In
+                </button>
               </nav>
             </div>
           </div>
@@ -145,7 +135,7 @@ const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween" }}
-              className="fixed top-0 right-0 w-4/3 bg-gray-800 text-white shadow-lg rounded-md"
+              className="fixed top-0 right-0 w-4/3  bg-gray-800 text-white shadow-lg  rounded-md"
             >
               <div className="flex justify-end">
                 <IoMdClose
@@ -153,6 +143,7 @@ const Header = () => {
                   onClick={() => setMenuOpen(!menuOpen)}
                 />
               </div>
+              {/* Close button is now handled in the main header */}
               <nav className="flex flex-col gap-6 px-6 mt-10 pb-10 bg-gray-800 rounded-md">
                 {[
                   "About Us",
@@ -177,17 +168,12 @@ const Header = () => {
                     </motion.a>
                   );
                 })}
-                <SignedOut>
-                  <button
-                    className="bg-orange-500 text-black px-4 py-2 rounded-lg font-medium tracking-tighter mt-4"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Sign In
-                  </button>
-                </SignedOut>
-                <SignedIn>
-                  <UserButton afterSignOutUrl="/" />
-                </SignedIn>
+                <button
+                  className="bg-orange-500 text-black px-4 py-2 rounded-lg font-medium tracking-tighter mt-4"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Sign In
+                </button>
               </nav>
             </motion.div>
           )}

@@ -2,12 +2,6 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  RedirectToSignIn,
-} from "@clerk/nextjs";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -22,20 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" className="relative">
-        <body className={twMerge(dmSans.className, "antialiased bg-[#c8dee0]")}>
-          {/* Redirect to Sign-In Page if Not Signed In */}
-          <SignedOut>
-            <RedirectToSignIn />
-          </SignedOut>
-
-          {/* Display Content Only When Signed In */}
-          <SignedIn>
-            {children}
-          </SignedIn>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className="relative">
+      <body className={twMerge(dmSans.className, "antialiased bg-[#c8dee0]")}>
+        {children}
+      </body>
+    </html>
   );
 }
