@@ -5,10 +5,13 @@ import TestimonialSection from "./sections/TestimonialSection";
 import FeesAndCharges from "./sections/FeesAndCharges";
 import InMediaSection from "./sections/InMediaSection ";
 import Footer from "./sections/Footer";
-
+import SignUpPage from "./sections/SignUpPage";
+import LoginPage from "./sections/LoginPage";
 export default function Home() {
   return (
     <>
+      <SignUpPage />
+      <LoginPage/>
       <Header />
       <section id="aboutus">
         <Hero />
