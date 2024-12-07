@@ -24,10 +24,11 @@ const SignUpPage = () => {
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),
   });
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
   const handleSubmit = (values : any) => {
     console.log("Form Submitted", values);
   };
+  /* eslint-disable @typescript-eslint/no-explicit-any */
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-orange-400 to-yellow-300">

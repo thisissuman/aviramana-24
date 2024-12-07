@@ -19,10 +19,11 @@ const LoginPage = () => {
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),
   });
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
   const handleSubmit = (values : any) => {
     console.log("Login Successful", values);
   };
+  /* eslint-disable @typescript-eslint/no-explicit-any */
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-yellow-400 to-orange-300">
